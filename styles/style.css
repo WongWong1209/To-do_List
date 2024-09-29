@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background-color: rgb(38, 48, 34);
+  font-family: "Raleway", cursive;
+  font-weight: 300;
+  color: white;
+}
+body header nav {
+  background-color: rgb(28, 35, 25);
+  box-shadow: 0 8px 6px -6px black;
+}
+body header nav ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+body header nav ul li {
+  padding: 1rem;
+}
+body header nav ul li a {
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+}
+body header nav ul li a:hover {
+  color: rgb(226, 255, 133);
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+body main h1 {
+  margin-top: 1rem;
+}
+body main h1 i.lightning-icon {
+  transform: scale(0.75);
+}
+body main .input-area {
+  margin: 1rem;
+}
+body main .input-area .list-element {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: scaleUp 0.5s ease;
+}
+body main .input-area .list-element input,
+body main .input-area .list-element button {
+  margin: 0.5rem;
+  border: 0.25px;
+}
+body main .input-area .list-element .btn-checkbox,
+body main .input-area .list-element .btn-trash {
+  transform: scale(2);
+  color: white;
+  background-color: transparent;
+}
+body main .input-area .list-element .btn-checkbox:hover,
+body main .input-area .list-element .btn-trash:hover {
+  cursor: pointer;
+}
+body main .input-area .list-element .input-text {
+  height: 2rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+body main .btn-add-element {
+  padding: 0.5rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+}
+body main .btn-add-element:hover {
+  cursor: pointer;
+}
+body footer {
+  background-color: rgb(22, 34, 17);
+  box-shadow: 0 -6px 10px -3px rgb(11, 11, 11);
+  position: absolute;
+  width: 100%;
+  height: 7rem;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body footer div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+body footer div a {
+  margin: 1rem;
+}
+body footer div a img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+.remove {
+  transform: scale(0);
+  transition: all 0.5s ease;
+}/*# sourceMappingURL=style.css.map */
