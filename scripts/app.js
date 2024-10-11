@@ -21,7 +21,7 @@ if (!textsContent) textsContent = [""];
 
 if (checkboxesState) {
     for (i in checkboxesState) {
-        createNewElement(checkboxesState[i], textsContent[i], formIds[i]);
+        createNewElement(checkboxesState[i], `"${textsContent[i]}"`, formIds[i]);
     }
 }
 
@@ -50,7 +50,7 @@ function createNewElement(checkboxState, textValue, id) {
     form_to_be_added.classList.add("list-element");
     form_to_be_added.innerHTML = `<form class="list-element">
                 <input type="checkbox" class="btn-checkbox" id="checkbox-${id}">
-                <input type="text" class="input-text" placeholder="things to do" id="text-${id}" value="${textValue}">
+                <input type="text" class="input-text" placeholder="things to do" id="text-${id}" value=${textValue}>
                 <button class="btn-trash"><i class="fas fa-trash"></i></button>
             </form>`;
     form_to_be_added.style.animation = "scaleUp 0.5s ease forwards";
@@ -108,7 +108,7 @@ function addCheckBoxChangeListener(theCheckbox) {
         }
 
         deleteElementOnScreen(e.target.parentElement);
-        createNewElement(isChecked, !textsContent[indexOfCheckbox] || textsContent[indexOfCheckbox] == "null" ? "" : textsContent[indexOfCheckbox], idOfCheckbox);
+        createNewElement(isChecked, textsContent[indexOfCheckbox] ? `\"${textsContent[indexOfCheckbox]}\"` : "", idOfCheckbox);
         checkboxesState[indexOfCheckbox] = isChecked;
         storeData();
     })
