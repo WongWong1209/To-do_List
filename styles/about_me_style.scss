@@ -1,0 +1,66 @@
+body {
+    main {
+        display: flex;
+        flex-direction: column;
+        //border: 1px white solid;
+
+        .upper_class {
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .left_class {
+                margin-right: 4rem;
+
+                #portfolio_img {
+                    width: 25rem;
+                    //animation: portfolio_img_idle 4s infinite ease-in-out;
+                    animation: float 6s ease-in-out infinite;
+                    margin-right: 2rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+            }
+
+            .right_class {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: left;
+
+                .link_icons {
+                    margin-right: 1rem;
+                    margin-left: 1rem;
+
+                    i {
+                        scale: 1.5;
+                        margin-top: 1rem;
+                        transition: all 0.3s ease-out;
+
+                        &:hover {
+                            transform: scale(1.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+}
