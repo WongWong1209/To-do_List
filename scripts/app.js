@@ -43,7 +43,8 @@ btn_add_element.addEventListener("click", () => {
 })
 
 function createNewElement(checkboxState, textValue, id) {
-    let input_area = document.querySelector("section.input-area");
+    let not_checked = document.querySelector(".not_checked");
+    let is_checked = document.querySelector(".is_checked");
     let form_to_be_added = document.createElement("form");
 
     form_to_be_added.classList.add("list-element");
@@ -55,7 +56,9 @@ function createNewElement(checkboxState, textValue, id) {
     form_to_be_added.style.animation = "scaleUp 0.5s ease forwards";
     if (checkboxState) form_to_be_added.querySelector(".btn-checkbox").checked = true;
 
-    input_area.appendChild(form_to_be_added);
+    if (checkboxState) is_checked.appendChild(form_to_be_added);
+    else not_checked.appendChild(form_to_be_added);
+
     addTrashListener(form_to_be_added.querySelector(".btn-trash"));
     addCheckBoxChangeListener(form_to_be_added.querySelector(".btn-checkbox"));
     addTextChangeListener(form_to_be_added.querySelector(".input-text"));
@@ -80,11 +83,14 @@ function addTrashListener(btn) {
         textsContent[indexOfText] = null;
         storeData();
 
-        element.style.animation = "scaleDown 0.5s ease forwards";
-        element.addEventListener("animationend", f => {
-            f.target.remove();
-        }
-        );
+        deleteElementOnScreen(element);
+    });
+}
+
+function deleteElementOnScreen(element) {
+    element.style.animation = "scaleDown 0.5s ease forwards";
+    element.addEventListener("animationend", e => {
+        e.target.remove();
     });
 }
 
@@ -101,6 +107,8 @@ function addCheckBoxChangeListener(theCheckbox) {
             }
         }
 
+        deleteElementOnScreen(e.target.parentElement);
+        createNewElement(isChecked, textsContent[indexOfCheckbox], idOfCheckbox);
         checkboxesState[indexOfCheckbox] = isChecked;
         storeData();
     })
@@ -131,12 +139,19 @@ function storeData() {
 
     if (textsContent) {
         textsContent.forEach((n, i) => {
-            if (n) {
+            if (n /*&& checkboxesState[i] == false*/) {
                 idToBeStore.push(formIds[i]);
                 checkboxStateToBeStore.push(checkboxesState[i]);
                 textContentToBeStore.push(textsContent[i]);
             }
         });
+        /*textsContent.forEach((n, i) => {
+            if (n && checkboxesState[i] == true) {
+                idToBeStore.push(formIds[i]);
+                checkboxStateToBeStore.push(checkboxesState[i]);
+                textContentToBeStore.push(textsContent[i]);
+            }
+        });*/
     }
 
     localStorage.setItem("formIds", JSON.stringify(idToBeStore));
