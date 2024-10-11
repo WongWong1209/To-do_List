@@ -7,14 +7,13 @@ body main .upper_class {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-body main .upper_class .left_class {
-  margin-right: 4rem;
+  justify-content: center;
 }
 body main .upper_class .left_class #portfolio_img {
+  margin: 2rem;
   width: 25rem;
+  max-width: 80vw;
   animation: float 6s ease-in-out infinite;
-  margin-right: 2rem;
   border-radius: 50%;
   overflow: hidden;
 }

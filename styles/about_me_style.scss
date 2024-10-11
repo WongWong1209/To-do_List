@@ -9,15 +9,16 @@ body {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
 
             .left_class {
-                margin-right: 4rem;
 
                 #portfolio_img {
+                    margin: 2rem;
                     width: 25rem;
+                    max-width: 80vw;
                     //animation: portfolio_img_idle 4s infinite ease-in-out;
                     animation: float 6s ease-in-out infinite;
-                    margin-right: 2rem;
                     border-radius: 50%;
                     overflow: hidden;
                 }
