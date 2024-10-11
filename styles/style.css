@@ -56,9 +56,12 @@ body main .input-area {
 }
 body main .input-area .list-element {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   animation: scaleUp 0.5s ease;
+  max-width: 80vw;
 }
 body main .input-area .list-element input,
 body main .input-area .list-element button {
@@ -79,6 +82,7 @@ body main .input-area .list-element .input-text {
   height: 2rem;
   font-size: 1.5rem;
   padding: 0.5rem;
+  max-width: 70%;
 }
 body main .btn-add-element {
   padding: 0.5rem 0.5rem;

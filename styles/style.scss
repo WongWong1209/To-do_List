@@ -66,9 +66,12 @@ body {
 
             .list-element {
                 display: flex;
+                flex-wrap: nowrap;
                 flex-direction: row;
                 align-items: center;
+                justify-content: center;
                 animation: scaleUp 0.5s ease;
+                max-width: 80vw;
 
                 input,
                 button {
@@ -91,6 +94,7 @@ body {
                     height: 2rem;
                     font-size: 1.5rem;
                     padding: 0.5rem;
+                    max-width: 70%;
                 }
             }
         }
@@ -118,14 +122,17 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         div {
             display: flex;
             flex-direction: row;
             align-items: center;
             text-align: center;
             justify-content: center;
+
             a {
                 margin: 1rem;
+
                 img {
                     width: 3.5rem;
                     height: 3.5rem;
