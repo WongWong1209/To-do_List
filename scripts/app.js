@@ -108,7 +108,7 @@ function addCheckBoxChangeListener(theCheckbox) {
         }
 
         deleteElementOnScreen(e.target.parentElement);
-        createNewElement(isChecked, textsContent[indexOfCheckbox] ? textsContent[indexOfCheckbox] : "", idOfCheckbox);
+        createNewElement(isChecked, !textsContent[indexOfCheckbox] || textsContent[indexOfCheckbox] == "null" ? "" : textsContent[indexOfCheckbox], idOfCheckbox);
         checkboxesState[indexOfCheckbox] = isChecked;
         storeData();
     })
