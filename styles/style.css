@@ -53,15 +53,17 @@ body main h1 i.lightning-icon {
 }
 body main .input-area {
   margin: 1rem;
+  width: 70vh;
+  max-width: 90vw;
 }
 body main .input-area .list-element {
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   animation: scaleUp 0.5s ease;
-  max-width: 80vw;
 }
 body main .input-area .list-element input,
 body main .input-area .list-element button {
@@ -79,10 +81,13 @@ body main .input-area .list-element .btn-trash:hover {
   cursor: pointer;
 }
 body main .input-area .list-element .input-text {
+  width: 70%;
   height: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0.5rem;
   max-width: 70%;
+  border-radius: 0.4rem;
+  text-align: center;
 }
 body main .btn-add-element {
   padding: 0.5rem 0.5rem;
@@ -97,10 +102,10 @@ body main .btn-add-element:hover {
 body footer {
   background-color: rgb(22, 34, 17);
   box-shadow: 0 -6px 10px -3px rgb(11, 11, 11);
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 7rem;
-  top: 100%;
+  top: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
