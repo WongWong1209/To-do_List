@@ -1,7 +1,18 @@
 # To-do List Project
 ### You can visit the website at [HERE](https://wongwong1209.github.io/To-do_List/)
-![image](https://github.com/user-attachments/assets/b34a1f1b-789c-483f-ace3-0823caf9b97a)
+<img width="1710" alt="image" src="https://github.com/user-attachments/assets/c38f98dc-8c86-4702-96e5-5ef56c84bee8">
+
 ## What is this project?
 This is a project I worked on to practice after learning frontend development.
-## In proccess
-* ordering
+## Functions
+(✔️: Finish, ✖️: In Process)
+
+✔️ basic to-do list functions
+
+✔️ storage
+
+✔️ ordering
+
+✖️ color theme
+
+✖️ multiple language
