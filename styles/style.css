@@ -31,7 +31,7 @@ body header nav ul {
   width: 100%;
 }
 body header nav ul li {
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 body header nav ul li a {
   font-size: 1.15rem;
