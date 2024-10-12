@@ -1,0 +1,21 @@
+{
+    "nav": {
+        "to_do_list": "To-do List",
+        "settings": "Settings",
+        "about_me": "About Me"
+    },
+    "to_do_list": {
+        "title": "To-do List"
+    },
+    "settings": {
+        "title": "Settings",
+        "color": "Color",
+        "language": "Language"
+    },
+    "about_me": {
+        "title": "About Me",
+        "name": "Wong Wong",
+        "location": "Taiwan",
+        "introduction": "Still learning frontend and backend."
+    }
+}

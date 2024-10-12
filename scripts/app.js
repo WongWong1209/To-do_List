@@ -1,3 +1,6 @@
+setLang();
+setLangTodoList();
+
 window.addEventListener("keypress", (e) => {
     if (e.key == "Enter") {
         e.preventDefault();

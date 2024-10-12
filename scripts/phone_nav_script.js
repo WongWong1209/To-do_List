@@ -1,8 +1,6 @@
 let phone_nav_options_btn = document.querySelector(".phone-nav-btn");
 let nav_is_triggered = false;
 
-console.log(phone_nav_options_btn);
-
 phone_nav_options_btn.addEventListener("click", () => {
     let header = document.querySelector("header");
     let nav_bar = document.querySelector(".phone-nav");

@@ -24,9 +24,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Settings</a></li>
-                <li><a href="../index.html">To-do List</a></li>
-                <li><a href="./about_me.html">About Me</a></li>
+                <li><a class="setting" href="./settings.html"></a></li>
+                <li><a class="todolist" href="../index.html"></a></li>
+                <li><a class="aboutme" href="./about_me.html"></a></li>
             </ul>
         </nav>
     </header>
@@ -34,7 +34,7 @@
     <main>
         <h1>
             <i class="fa-solid fa-gear"></i>
-            Settings
+            <span></span>
             <i class="fa-solid fa-gear"></i>
         </h1>
         <section class="color-setting-area">
@@ -48,6 +48,14 @@
                 <div class="color-template template-pink" onclick="changeOnClick(`pink`);"></div>
             </div>
         </section>
+        <section class="language-setting-area">
+            <h2>Language</h2>
+            <select class="lang_select">
+                <option value="en">English</option>
+                <option value="tw">繁體中文</option>
+                <option value="jp">日本語</option>
+            </select>
+        </section>
     </main>
 
     <footer>
@@ -58,6 +66,8 @@
                     alt="Project Github Link Image"></a>
         </div>
     </footer>
+    <script src="../scripts/language.js"></script>
+    <script src="../scripts/setting_script.js"></script>
     <script src="../scripts/color_theme.js"></script>
     <script src="../scripts/phone_nav_script.js"></script>
 </body>

@@ -1,0 +1,21 @@
+{
+    "nav": {
+        "to_do_list": "待辦清單",
+        "settings": "設定",
+        "about_me": "作者"
+    },
+    "to_do_list": {
+        "title": "待辦清單"
+    },
+    "settings": {
+        "title": "設定",
+        "color": "顏色主題",
+        "language": "語言選擇"
+    },
+    "about_me": {
+        "title": "作者",
+        "name": "千羽",
+        "location": "台灣",
+        "introduction": "正在學習網頁前後端"
+    }
+}

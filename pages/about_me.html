@@ -24,9 +24,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="./settings.html">Settings</a></li>
-                <li><a href="../index.html">To-do List</a></li>
-                <li><a href="#">About Me</a></li>
+                <li><a class="setting" href="./settings.html"></a></li>
+                <li><a class="todolist" href="../index.html"></a></li>
+                <li><a class="aboutme" href="#"></a></li>
             </ul>
         </nav>
     </header>
@@ -34,7 +34,7 @@
     <main>
         <h1>
             <i class="fa-solid fa-heart"></i>
-            About Me
+            <span></span>
             <i class="fa-solid fa-heart"></i>
         </h1>
         <section class="upper_class">
@@ -43,15 +43,15 @@
             </div>
             <div class="right_class">
                 <div class="block">
-                    <h2>Wong Wong</h2>
+                    <h2 id="name"></h2>
                     <br>
 
                     <i class="fa-solid fa-location-dot"></i>
-                    Taiwan
+                    <span id="location"></span>
                     <br><br>
 
                     <i class="fa-solid fa-desktop"></i>
-                    Still learning frontend and backend.
+                    <span id="introduction"></span>
                     <br><br>
 
                     <a href="" class="link_icons"><i class="fa-solid fa-user"></i></a>
@@ -74,8 +74,10 @@
                     alt="Project Github Link Image"></a>
         </div>
     </footer>
+    <script src="../scripts/language.js"></script>
     <script src="../scripts/color_theme.js"></script>
     <script src="../scripts/phone_nav_script.js"></script>
+    <script src="../scripts/about_me_script.js"></script>
 </body>
 
 </html>

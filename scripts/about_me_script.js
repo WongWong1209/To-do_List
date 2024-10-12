@@ -1,0 +1,2 @@
+setLang();
+setLangAboutMe();
