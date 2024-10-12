@@ -46,6 +46,18 @@ body {
         }
     }
 
+    .phone-nav {
+        display: none;
+        text-align: right;
+        transition: all 0.5s ease-in-out;
+        position: fixed;
+        width: 100%;
+
+        i {
+            margin: 1rem;
+        }
+    }
+
     main {
         display: flex;
         flex-direction: column;
@@ -176,4 +188,31 @@ body {
 .remove {
     transform: scale(0);
     transition: all 0.5s ease;
+}
+
+@media screen and (max-width : 430px) {
+    body {
+        header {
+            transform: translateY(-162px);
+
+            nav {
+                ul {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+
+        .phone-nav {
+            display: block;
+            position: fixed;
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+            z-index: 10;
+        }
+
+        main {
+            transform: translateY(-100px);
+        }
+    }
 }

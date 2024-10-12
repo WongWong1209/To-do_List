@@ -6,14 +6,18 @@ body main .color-setting-area h2 {
   border-bottom: 1px white solid;
 }
 body main .color-setting-area .grid-container {
-  display: grid;
-  grid-template-columns: 10rem 10rem 10rem;
-  grid-template-rows: 6rem 6rem 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 2rem;
 }
 body main .color-setting-area .grid-container .color-template {
   border: 0.6px white solid;
   transition: all 0.2s ease-in-out;
+  width: 6rem;
+  height: 4rem;
+  max-width: 6rem;
+  max-height: 4rem;
 }
 body main .color-setting-area .grid-container .color-template:hover {
   transform: scale(1.2);

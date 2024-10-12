@@ -10,7 +10,7 @@ let colors = {
 function changeColorTheme() {
     let colorTag = localStorage.getItem("color_tag");
     let body = document.body;
-    let nav = document.querySelector("nav");
+    let nav = document.querySelectorAll("nav");
 
     if (!colorTag) {
         colorTag = "green";
@@ -18,7 +18,9 @@ function changeColorTheme() {
     }
 
     body.style.backgroundColor = colors[colorTag][0];
-    nav.style.backgroundColor = colors[colorTag][1];
+    nav.forEach(n => {
+        n.style.backgroundColor = colors[colorTag][1];
+    })
 }
 
 changeColorTheme();

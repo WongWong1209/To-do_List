@@ -10,14 +10,18 @@ body {
             }
 
             .grid-container {
-                display: grid;
-                grid-template-columns: 10rem 10rem 10rem;
-                grid-template-rows: 6rem 6rem 6rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
                 margin-top: 2rem;
 
                 .color-template {
                     border: 0.6px white solid;
                     transition: all 0.2s ease-in-out;
+                    width: 6rem;
+                    height: 4rem;
+                    max-width: 6rem;
+                    max-height: 4rem;
 
                     &:hover {
                         transform: scale(1.2);

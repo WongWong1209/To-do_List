@@ -38,6 +38,16 @@ body header nav ul li a {
 body header nav ul li a:hover {
   color: rgb(226, 255, 133);
 }
+body .phone-nav {
+  display: none;
+  text-align: right;
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+  width: 100%;
+}
+body .phone-nav i {
+  margin: 1rem;
+}
 body main {
   display: flex;
   flex-direction: column;
@@ -147,4 +157,24 @@ body footer div a img {
 .remove {
   transform: scale(0);
   transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 430px) {
+  body header {
+    transform: translateY(-162px);
+  }
+  body header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  body .phone-nav {
+    display: block;
+    position: fixed;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+  }
+  body main {
+    transform: translateY(-100px);
+  }
 }/*# sourceMappingURL=style.css.map */
