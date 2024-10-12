@@ -49,4 +49,12 @@ body main .upper_class .right_class .link_icons i:hover {
     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
   }
+}
+@media screen and (max-width: 746px) {
+  .upper_class {
+    margin-top: 1rem !important;
+  }
+  #portfolio_img {
+    margin-top: 0;
+  }
 }/*# sourceMappingURL=about_me_style.css.map */

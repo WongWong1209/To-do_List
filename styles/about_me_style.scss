@@ -65,3 +65,13 @@ body {
         transform: translatey(0px);
     }
 }
+
+@media screen and (max-width : 746px) {
+    .upper_class {
+        margin-top: 1rem !important;
+    }
+
+    #portfolio_img {
+        margin-top: 0;
+    }
+}
