@@ -13,7 +13,7 @@ This is a project I worked on to practice after learning frontend development.
 
 ✔️ ordering
 
-✖️ color theme
+✔️ color theme
 
 ✖️ multiple language
 
