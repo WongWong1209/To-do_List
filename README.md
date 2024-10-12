@@ -4,6 +4,12 @@
 
 ## What is this project?
 This is a project I worked on to practice after learning frontend development.
+
+## Language
+* English
+* 繁體中文
+* 日本語
+
 ## Functions
 (✔️: Finish, ✖️: In Process)
 
