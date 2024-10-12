@@ -14,7 +14,6 @@ a {
 }
 
 body {
-  background-color: rgb(38, 48, 34);
   font-family: "Raleway", cursive;
   font-weight: 300;
   color: white;
@@ -22,7 +21,6 @@ body {
   flex-direction: column;
 }
 body header nav {
-  background-color: rgb(28, 35, 25);
   box-shadow: 0 8px 6px -6px black;
 }
 body header nav ul {

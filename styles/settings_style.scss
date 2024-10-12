@@ -1,0 +1,55 @@
+body {
+    main {
+        .color-setting-area {
+            //border: 1px white solid;
+            margin-top: 2rem;
+
+            h2 {
+                font-weight: 100;
+                border-bottom: 1px white solid;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: 10rem 10rem 10rem;
+                grid-template-rows: 6rem 6rem 6rem;
+                margin-top: 2rem;
+
+                .color-template {
+                    border: 0.6px white solid;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        border: 5px white solid;
+                        border-radius: 10px;
+                    }
+                }
+
+                .template-green {
+                    background-color: rgb(38, 48, 34);
+                }
+
+                .template-yellow {
+                    background-color: rgb(136, 131, 0);
+                }
+
+                .template-blue {
+                    background-color: rgb(0, 86, 136);
+                }
+
+                .template-black {
+                    background-color: rgb(37, 37, 37);
+                }
+
+                .template-cyan {
+                    background-color: rgb(0, 136, 125);
+                }
+
+                .template-pink {
+                    background-color: rgb(123, 46, 110);
+                }
+            }
+        }
+    }
+}

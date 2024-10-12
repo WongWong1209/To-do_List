@@ -14,9 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/settings_style.css" />
 </head>
 
-<body>
+<body">
     <header>
         <nav>
             <ul>
@@ -33,18 +34,28 @@
             Settings
             <i class="fa-solid fa-gear"></i>
         </h1>
+        <section class="color-setting-area">
+            <h2>Color</h2>
+            <div class="grid-container">
+                <div class="color-template template-green" onclick="changeOnClick(`green`);"></div>
+                <div class="color-template template-yellow" onclick="changeOnClick(`yellow`);"></div>
+                <div class="color-template template-blue" onclick="changeOnClick(`blue`);"></div>
+                <div class="color-template template-black" onclick="changeOnClick(`black`);"></div>
+                <div class="color-template template-cyan" onclick="changeOnClick(`cyan`);"></div>
+                <div class="color-template template-pink" onclick="changeOnClick(`pink`);"></div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="icons">
-            <a href="https://discord.gg/dV6Sbmb35A" target="_blank"><img src="./images/discord_icon.png"
+            <a href="https://discord.gg/dV6Sbmb35A" target="_blank"><img src="../images/discord_icon.png"
                     alt="Discord Link Image"></a>
-            <a href="https://github.com/WongWong1209/To-do_List" target="_blank"><img src="./images/github_icon.png"
+            <a href="https://github.com/WongWong1209/To-do_List" target="_blank"><img src="../images/github_icon.png"
                     alt="Project Github Link Image"></a>
         </div>
     </footer>
-
-    <script src="./scripts/app.js"></script>
-</body>
+    <script src="../scripts/color_theme.js"></script>
+    </body>
 
 </html>

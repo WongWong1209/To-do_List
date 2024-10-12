@@ -1,0 +1,40 @@
+body main .color-setting-area {
+  margin-top: 2rem;
+}
+body main .color-setting-area h2 {
+  font-weight: 100;
+  border-bottom: 1px white solid;
+}
+body main .color-setting-area .grid-container {
+  display: grid;
+  grid-template-columns: 10rem 10rem 10rem;
+  grid-template-rows: 6rem 6rem 6rem;
+  margin-top: 2rem;
+}
+body main .color-setting-area .grid-container .color-template {
+  border: 0.6px white solid;
+  transition: all 0.2s ease-in-out;
+}
+body main .color-setting-area .grid-container .color-template:hover {
+  transform: scale(1.2);
+  border: 5px white solid;
+  border-radius: 10px;
+}
+body main .color-setting-area .grid-container .template-green {
+  background-color: rgb(38, 48, 34);
+}
+body main .color-setting-area .grid-container .template-yellow {
+  background-color: rgb(136, 131, 0);
+}
+body main .color-setting-area .grid-container .template-blue {
+  background-color: rgb(0, 86, 136);
+}
+body main .color-setting-area .grid-container .template-black {
+  background-color: rgb(37, 37, 37);
+}
+body main .color-setting-area .grid-container .template-cyan {
+  background-color: rgb(0, 136, 125);
+}
+body main .color-setting-area .grid-container .template-pink {
+  background-color: rgb(123, 46, 110);
+}/*# sourceMappingURL=settings_style.css.map */
