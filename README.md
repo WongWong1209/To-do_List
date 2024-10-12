@@ -5,6 +5,9 @@
 This is a project I worked on to practice after learning frontend development.
 ## Functions
 ✔️ basic to-do list functions
+
 ✔️ storage
+
 ✔️ ordering
+
 ✖️ color theme
