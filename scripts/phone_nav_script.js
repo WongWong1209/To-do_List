@@ -5,15 +5,15 @@ console.log(phone_nav_options_btn);
 
 phone_nav_options_btn.addEventListener("click", () => {
     let header = document.querySelector("header");
-    let main = document.querySelector("main");
+    let nav_bar = document.querySelector(".phone-nav");
 
     if (nav_is_triggered) {
-        header.style.transform = "translateY(-162px)";
-        main.style.transform = "translateY(-100px)";
+        header.style.display = "none";
+        nav_bar.style.boxShadow = "0 8px 6px -6px black";
     }
     else {
-        header.style.transform = "translateY(40px)";
-        main.style.transform = "translateY(40px)";
+        header.style.display = "block";
+        nav_bar.style.boxShadow = "none";
     }
 
     nav_is_triggered = !nav_is_triggered;

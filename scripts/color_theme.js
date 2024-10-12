@@ -10,7 +10,7 @@ let colors = {
 function changeColorTheme() {
     let colorTag = localStorage.getItem("color_tag");
     let body = document.body;
-    let nav = document.querySelectorAll("nav");
+    let nav = document.querySelectorAll("nav, footer");
 
     if (!colorTag) {
         colorTag = "green";

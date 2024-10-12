@@ -161,7 +161,11 @@ body footer div a img {
 
 @media screen and (max-width: 430px) {
   body header {
-    transform: translateY(-162px);
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    top: 40px;
   }
   body header nav ul {
     flex-direction: column;
@@ -173,8 +177,9 @@ body footer div a img {
     width: 100%;
     transition: all 0.5s ease-in-out;
     z-index: 10;
+    box-shadow: 0 8px 6px -6px black;
   }
   body main {
-    transform: translateY(-100px);
+    margin-top: 50px;
   }
 }/*# sourceMappingURL=style.css.map */
