@@ -1,3 +1,5 @@
+let repo_name = "To-do_List";
+
 function setLang() {
     let lang = localStorage.getItem("language");
     if (!lang) {
@@ -9,7 +11,7 @@ function setLang() {
     let todolist = document.querySelector(".todolist");
     let aboutme = document.querySelector(".aboutme");
 
-    fetch(`../langs/${lang}.json`)
+    fetch(`${repo_name}/langs/${lang}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -35,7 +37,7 @@ function setLangTodoList() {
 
     let title = document.querySelector("h1 span");
 
-    fetch(`../langs/${lang}.json`)
+    fetch(`${repo_name}/langs/${lang}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -62,7 +64,7 @@ function setLangAboutMe() {
     let location = document.querySelector("#location");
     let introduction = document.querySelector("#introduction");
 
-    fetch(`../langs/${lang}.json`)
+    fetch(`${repo_name}/langs/${lang}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -91,7 +93,7 @@ function setLangSettings() {
     let color_title = document.querySelector(".color-setting-area h2");
     let language_title = document.querySelector(".language-setting-area h2");
 
-    fetch(`../langs/${lang}.json`)
+    fetch(`${repo_name}/langs/${lang}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
