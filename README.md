@@ -4,7 +4,7 @@
 ## What is this project?
 This is a project I worked on to practice after learning frontend development.
 ## Functions
-(✔️:finish, ✖️:in process)
+(✔️: Finish, ✖️: In Process)
 
 ✔️ basic to-do list functions
 
