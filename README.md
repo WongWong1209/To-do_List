@@ -15,7 +15,7 @@ This is a project I worked on to practice after learning frontend development.
 
 ✔️ color theme
 
-✖️ multiple language
+✔️ multiple language
 
 ## Screen shot of defferent theme
 <img width="1709" alt="image" src="https://github.com/user-attachments/assets/04c08719-e1fa-49d4-9959-3df1108ca3b1">
