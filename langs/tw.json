@@ -5,7 +5,8 @@
         "about_me": "作者"
     },
     "to_do_list": {
-        "title": "待辦清單"
+        "title": "待辦清單",
+        "element": "代辦事項"
     },
     "settings": {
         "title": "設定",

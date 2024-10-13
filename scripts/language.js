@@ -1,4 +1,5 @@
-let repo_name = "To-do_List";
+//let repo_name = "To-do_List";
+let repo_name = "..";
 
 function setLang() {
     let lang = localStorage.getItem("language");
@@ -6,6 +7,8 @@ function setLang() {
         lang = "en";
         localStorage.setItem("language", lang);
     }
+
+    setFontFamily(lang);
 
     let setting = document.querySelector(".setting");
     let todolist = document.querySelector(".todolist");
@@ -46,6 +49,29 @@ function setLangTodoList() {
         })
         .then(data => {
             title.innerText = data.to_do_list.title;
+            document.title = data.to_do_list.title;
+        })
+        .catch(error => {
+            console.error('Error loading JSON file:', error);
+        });
+}
+
+function setElement(element) {
+    let lang = localStorage.getItem("language");
+    if (!lang) {
+        lang = "en";
+        localStorage.setItem("language", lang);
+    }
+
+    fetch(`/${repo_name}/langs/${lang}.json`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            element.placeholder = data.to_do_list.element;
         })
         .catch(error => {
             console.error('Error loading JSON file:', error);
@@ -72,6 +98,7 @@ function setLangAboutMe() {
             return response.json();
         })
         .then(data => {
+            document.title = data.about_me.title;
             title.innerText = data.about_me.title;
             name.innerText = data.about_me.name;
             location.innerText = data.about_me.location;
@@ -89,6 +116,8 @@ function setLangSettings() {
         localStorage.setItem("language", lang);
     }
 
+    setFontFamily(lang);
+
     let title = document.querySelector("h1 span");
     let color_title = document.querySelector(".color-setting-area h2");
     let language_title = document.querySelector(".language-setting-area h2");
@@ -101,6 +130,7 @@ function setLangSettings() {
             return response.json();
         })
         .then(data => {
+            document.title = data.settings.title;
             title.innerText = data.settings.title;
             color_title.innerText = data.settings.color;
             language_title.innerText = data.settings.language;
@@ -108,4 +138,9 @@ function setLangSettings() {
         .catch(error => {
             console.error('Error loading JSON file:', error);
         });
+}
+
+function setFontFamily(lang) {
+    if (lang == "en") document.body.style.fontFamily = "Raleway, cursive";
+    else if (lang == "tw") document.body.style.fontFamily = "Noto Sans TC, sans - serif";
 }

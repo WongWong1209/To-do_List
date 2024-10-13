@@ -2,10 +2,11 @@
     "nav": {
         "to_do_list": "やることリスト",
         "settings": "設定",
-        "about_me": "自己紹介"
+        "about_me": "私について"
     },
     "to_do_list": {
-        "title": "やることリスト"
+        "title": "やることリスト",
+        "element": "やること"
     },
     "settings": {
         "title": "設定",
@@ -13,7 +14,7 @@
         "language": "言語選択"
     },
     "about_me": {
-        "title": "自己紹介",
+        "title": "私について",
         "name": "千羽",
         "location": "台湾",
         "introduction": "フロントエンドとバックエンドを学習中"

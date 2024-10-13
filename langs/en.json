@@ -5,7 +5,8 @@
         "about_me": "About Me"
     },
     "to_do_list": {
-        "title": "To-do List"
+        "title": "To-do List",
+        "element": "things to do"
     },
     "settings": {
         "title": "Settings",
