@@ -23,6 +23,10 @@ This is a project I worked on to practice after learning frontend development.
 
 ✔️ multiple language
 
+# Bugs need to be fixed
+* font won't change immediatly after switching language
+* "things to do" placeholder won't show normaly at checked checkbox
+
 ## Screen shot of defferent theme
 <img width="1709" alt="image" src="https://github.com/user-attachments/assets/04c08719-e1fa-49d4-9959-3df1108ca3b1">
 <img width="1709" alt="image" src="https://github.com/user-attachments/assets/7929280f-3fd3-4e58-9871-ec7a77ebbe79">
