@@ -9,4 +9,5 @@ lang_select.addEventListener("change", e => {
     localStorage.setItem("language", e.currentTarget.value);
     setLang();
     setLangSettings();
+    setFontFamily();
 })
