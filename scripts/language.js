@@ -1,5 +1,5 @@
-//let repo_name = "To-do_List";
-let repo_name = "..";
+let repo_name = "To-do_List";
+//let repo_name = "..";
 
 function setLang() {
     let lang = localStorage.getItem("language");
@@ -7,8 +7,6 @@ function setLang() {
         lang = "en";
         localStorage.setItem("language", lang);
     }
-
-    setFontFamily(lang);
 
     let setting = document.querySelector(".setting");
     let todolist = document.querySelector(".todolist");
@@ -29,6 +27,8 @@ function setLang() {
         .catch(error => {
             console.error('Error loading JSON file:', error);
         });
+
+    setFontFamily();
 }
 
 function setLangTodoList() {
@@ -116,8 +116,6 @@ function setLangSettings() {
         localStorage.setItem("language", lang);
     }
 
-    setFontFamily(lang);
-
     let title = document.querySelector("h1 span");
     let color_title = document.querySelector(".color-setting-area h2");
     let language_title = document.querySelector(".language-setting-area h2");
@@ -140,7 +138,13 @@ function setLangSettings() {
         });
 }
 
-function setFontFamily(lang) {
+function setFontFamily() {
+    let lang = localStorage.getItem("language");
+    if (!lang) {
+        lang = "en";
+        localStorage.setItem("language", lang);
+    }
+
     if (lang == "en") document.body.style.fontFamily = "Raleway, cursive";
     else if (lang == "tw") document.body.style.fontFamily = "Noto Sans TC, sans - serif";
 }
