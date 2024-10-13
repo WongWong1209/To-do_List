@@ -30,7 +30,11 @@ body {
                 width: 100%;
 
                 li {
-                    padding: 1rem 2rem;
+                    display: flex;
+                    width: 10rem;
+                    height: 3rem;
+                    align-items: center;
+                    justify-content: center;
 
                     a {
                         font-size: 1.15rem;

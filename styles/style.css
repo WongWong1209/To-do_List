@@ -28,7 +28,11 @@ body header nav ul {
   width: 100%;
 }
 body header nav ul li {
-  padding: 1rem 2rem;
+  display: flex;
+  width: 10rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
 }
 body header nav ul li a {
   font-size: 1.15rem;
