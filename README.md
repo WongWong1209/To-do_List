@@ -24,7 +24,6 @@ This is a project I worked on to practice after learning frontend development.
 ✔️ multiple language
 
 ## Bugs need to be fixed
-* font won't change immediatly after switching language
 * "things to do" placeholder won't show normaly at checked checkbox
 
 ## Screen shot of defferent theme
