@@ -57,6 +57,8 @@ function setLangTodoList() {
 }
 
 function setElement(element) {
+    console.log(element);
+
     let lang = localStorage.getItem("language");
     if (!lang) {
         lang = "en";
