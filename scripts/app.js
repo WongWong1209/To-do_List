@@ -53,7 +53,7 @@ function createNewElement(checkboxState, textValue, id) {
     form_to_be_added.classList.add("list-element");
     form_to_be_added.innerHTML = `<form class="list-element">
                 <input type="checkbox" class="btn-checkbox" id="checkbox-${id}">
-                <input type="text" class="input-text" placeholder="雞巴" id="text-${id}" value=${textValue}>
+                <input type="text" class="input-text" placeholder="" id="text-${id}" value=${textValue}>
                 <button class="btn-trash"><i class="fas fa-trash"></i></button>
             </form>`;
     form_to_be_added.style.animation = "scaleUp 0.5s ease forwards";
