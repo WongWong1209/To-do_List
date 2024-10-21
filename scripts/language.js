@@ -1,12 +1,28 @@
 let repo_name = "..";
-repo_name = "To-do_List";
+//repo_name = "To-do_List";
 
-function setLang() {
+function getLang() {
     let lang = localStorage.getItem("language");
     if (!lang) {
         lang = "en";
         localStorage.setItem("language", lang);
     }
+
+    return lang;
+}
+
+function setFontFamily() {
+    let lang = getLang();
+
+    console.log(lang);
+
+    if (lang == "en") document.body.style.fontFamily = "Raleway, cursive";
+    else if (lang == "tw") document.body.style.fontFamily = "Noto Sans TC, sans-serif";
+    else if (lang == "jp") document.body.style.fontFamily = "Yusei Magic, sans-serif";
+}
+
+function setLang() {
+    let lang = getLang();
 
     let setting = document.querySelector(".setting");
     let todolist = document.querySelector(".todolist");
@@ -32,11 +48,7 @@ function setLang() {
 }
 
 function setLangTodoList() {
-    let lang = localStorage.getItem("language");
-    if (!lang) {
-        lang = "en";
-        localStorage.setItem("language", lang);
-    }
+    let lang = getLang();
 
     let title = document.querySelector("h1 span");
 
@@ -57,13 +69,7 @@ function setLangTodoList() {
 }
 
 function setElement(element) {
-    console.log(element);
-
-    let lang = localStorage.getItem("language");
-    if (!lang) {
-        lang = "en";
-        localStorage.setItem("language", lang);
-    }
+    let lang = getLang();
 
     fetch(`/${repo_name}/langs/${lang}.json`)
         .then(response => {
@@ -81,11 +87,7 @@ function setElement(element) {
 }
 
 function setLangAboutMe() {
-    let lang = localStorage.getItem("language");
-    if (!lang) {
-        lang = "en";
-        localStorage.setItem("language", lang);
-    }
+    let lang = getLang();
 
     let title = document.querySelector("h1 span");
     let name = document.querySelector("#name");
@@ -112,11 +114,7 @@ function setLangAboutMe() {
 }
 
 function setLangSettings() {
-    let lang = localStorage.getItem("language");
-    if (!lang) {
-        lang = "en";
-        localStorage.setItem("language", lang);
-    }
+    let lang = getLang();
 
     let title = document.querySelector("h1 span");
     let color_title = document.querySelector(".color-setting-area h2");
@@ -138,18 +136,4 @@ function setLangSettings() {
         .catch(error => {
             console.error('Error loading JSON file:', error);
         });
-}
-
-function setFontFamily() {
-    let lang = localStorage.getItem("language");
-    if (!lang) {
-        lang = "en";
-        localStorage.setItem("language", lang);
-    }
-
-    console.log(lang);
-
-    if (lang == "en") document.body.style.fontFamily = "Raleway, cursive";
-    else if (lang == "tw") document.body.style.fontFamily = "Noto Sans TC, sans-serif";
-    else if (lang == "jp") document.body.style.fontFamily = "Yusei Magic, sans-serif";
 }

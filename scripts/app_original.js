@@ -1,20 +1,6 @@
 setLang();
 setLangTodoList();
 
-Array.prototype.remove = function(from, to) {
-    var rest = this.slice((to || from) + 1 || this.length);
-    this.length = from < 0 ? this.length + from : from;
-    return this.push.apply(this, rest);
-};
-
-class Card {
-    constructor(checkboxState, textContent, formId) {
-        this.checkboxState = checkboxState;
-        this.textContent = textContent;
-        this.formId = formId;
-    }
-}
-
 window.addEventListener("keypress", (e) => {
     if (e.key == "Enter") {
         e.preventDefault();
@@ -28,8 +14,19 @@ allButtons.forEach((button) => {
     });
 });
 
-let cards = JSON.parse(localStorage.getItem("cards"));
-if(!cards) cards.push(new Card(false, "", 0));
+let formIds = JSON.parse(localStorage.getItem("formIds"));
+let checkboxesState = JSON.parse(localStorage.getItem("checkboxesState"));
+let textsContent = JSON.parse(localStorage.getItem("textsContent"));
+
+if (!formIds) formIds = [0];
+if (!checkboxesState) checkboxesState = [false];
+if (!textsContent) textsContent = [""];
+
+if (checkboxesState) {
+    for (i in checkboxesState) {
+        createNewElement(checkboxesState[i], `"${textsContent[i]}"`, formIds[i]);
+    }
+}
 
 let btn_add_element = document.querySelector("button.btn-add-element");
 btn_add_element.addEventListener("click", () => {
