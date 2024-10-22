@@ -28,8 +28,15 @@ allButtons.forEach((button) => {
     });
 });
 
-let cards = JSON.parse(localStorage.getItem("cards"));
-if(!cards) cards.push(new Card(false, "", 0));
+let cards = JSON.parse(localStorage.getItem("cards")) || [];
+if(cards.length == 0) {
+    let initCard = new Card(false, "", 0)
+    cards.push(initCard);
+}
+
+for(card of cards) {
+    createNewElement(card.checkboxesState, card.textContent==undefined||card.textContent==null||card.textContent=="" ? "" : `"${card.textContent}"`, card.formId);
+}
 
 let btn_add_element = document.querySelector("button.btn-add-element");
 btn_add_element.addEventListener("click", () => {
@@ -37,21 +44,26 @@ btn_add_element.addEventListener("click", () => {
     let alreadyExist = false;
 
     do {
-        if (formIds) alreadyExist = formIds.some(formid => index == formid);
+        alreadyExist = cards.some(card => index == card.formId);
         if (alreadyExist) index++;
     } while (alreadyExist);
 
+    console.log(`INDEX IS ${index}`);
     createNewElement(false, "", index);
 
-    formIds.push(index);
-    checkboxesState.push(false);
-    textsContent.push(null);
+    let newCard = new Card(false, "", index);
+    console.log(newCard);
+    cards.push(newCard);
+
+    console.log(cards);
 })
 
 function createNewElement(checkboxState, textValue, id) {
     let not_checked = document.querySelector(".not_checked");
     let is_checked = document.querySelector(".is_checked");
     let form_to_be_added = document.createElement("form");
+
+    console.log(`ID IS ${id}`);
 
     form_to_be_added.classList.add("list-element");
     form_to_be_added.innerHTML = `<form class="list-element">
@@ -73,7 +85,6 @@ function createNewElement(checkboxState, textValue, id) {
     if (!checkboxState) things_to_do = document.querySelector(`.not_checked #text-${id}`);
     else things_to_do = document.querySelector(`.is_checked #text-${id}`);
     setElement(things_to_do);
-    console.log(things_to_do.parentElement.parentElement);
 }
 
 function addTrashListener(btn) {
@@ -86,13 +97,13 @@ function addTrashListener(btn) {
 
         let idOfText = element.querySelector(".input-text").id.split("-")[1];
         let indexOfText = 0;
-        for (i in formIds) {
-            if (formIds[i] == idOfText) {
+        for (i in cards) {
+            if (cards[i].formIds == idOfText) {
                 indexOfText = i;
                 break;
             }
         }
-        textsContent[indexOfText] = null;
+        cards.remove(indexOfText);
         storeData();
 
         deleteElementOnScreen(element);
@@ -112,16 +123,16 @@ function addCheckBoxChangeListener(theCheckbox) {
         let isChecked = e.target.checked;
         let idOfCheckbox = e.target.id.split("-")[1];
         let indexOfCheckbox = 0;
-        for (i in formIds) {
-            if (formIds[i] == idOfCheckbox) {
+        for (i in cards) {
+            if (cards[i].formId == idOfCheckbox) {
                 indexOfCheckbox = i;
                 break;
             }
         }
 
         deleteElementOnScreen(e.target.parentElement);
-        createNewElement(isChecked, textsContent[indexOfCheckbox] ? `\"${textsContent[indexOfCheckbox]}\"` : "", idOfCheckbox);
-        checkboxesState[indexOfCheckbox] = isChecked;
+        createNewElement(isChecked, cards[indexOfCheckbox].textContent, idOfCheckbox);
+        cards[indexOfCheckbox].checkboxesState = isChecked;
         storeData();
     })
 }
@@ -131,35 +142,28 @@ function addTextChangeListener(theText) {
         e.stopPropagation();
         let valueOfText = e.target.value;
         let idOfText = e.target.id.split("-")[1];
-        let indexOfText = 0;
-        for (i in formIds) {
-            if (formIds[i] == idOfText) {
+        let indexOfText = -1;
+        
+        for (i in cards) {
+            if (cards[i].formId == idOfText) {
                 indexOfText = i;
                 break;
             }
         }
 
-        textsContent[indexOfText] = valueOfText;
+        console.log(`idOfText : ${idOfText}`);
+        console.log(cards);
+        console.log(indexOfText);
+        cards[indexOfText].textContent = valueOfText;
         storeData();
     })
 }
 
 function storeData() {
-    let idToBeStore = [];
-    let checkboxStateToBeStore = [];
-    let textContentToBeStore = [];
+    let cardToBeSave = [];
 
-    if (textsContent) {
-        textsContent.forEach((n, i) => {
-            if (n) {
-                idToBeStore.push(formIds[i]);
-                checkboxStateToBeStore.push(checkboxesState[i]);
-                textContentToBeStore.push(textsContent[i]);
-            }
-        });
+    for(card of cards) {
+        if(card.textContent) cardToBeSave.push(card);
     }
-
-    localStorage.setItem("formIds", JSON.stringify(idToBeStore));
-    localStorage.setItem("checkboxesState", JSON.stringify(checkboxStateToBeStore));
-    localStorage.setItem("textsContent", JSON.stringify(textContentToBeStore));
+    localStorage.setItem("cards", JSON.stringify(cardToBeSave));
 }
