@@ -1,9 +1,9 @@
 setLang();
 setLangTodoList();
 
-Array.prototype.remove = function(from, to) {
-    var rest = this.slice((to || from) + 1 || this.length);
-    this.length = from < 0 ? this.length + from : from;
+Array.prototype.remove = function(index) {
+    let rest = this.slice(index + 1);
+    this.length = index;
     return this.push.apply(this, rest);
 };
 
@@ -35,7 +35,12 @@ if(cards.length == 0) {
 }
 
 for(card of cards) {
-    createNewElement(card.checkboxesState, card.textContent==undefined||card.textContent==null||card.textContent=="" ? "" : `"${card.textContent}"`, card.formId);
+    let tc = card.textContent;
+    if(card.textContent==undefined||card.textContent==null||card.textContent=="") {
+        tc = "";
+    }
+    
+    createNewElement(card.checkboxesState,  `"${tc}"`, card.formId);
 }
 
 let btn_add_element = document.querySelector("button.btn-add-element");
@@ -47,23 +52,16 @@ btn_add_element.addEventListener("click", () => {
         alreadyExist = cards.some(card => index == card.formId);
         if (alreadyExist) index++;
     } while (alreadyExist);
-
-    console.log(`INDEX IS ${index}`);
     createNewElement(false, "", index);
 
     let newCard = new Card(false, "", index);
-    console.log(newCard);
     cards.push(newCard);
-
-    console.log(cards);
 })
 
 function createNewElement(checkboxState, textValue, id) {
     let not_checked = document.querySelector(".not_checked");
     let is_checked = document.querySelector(".is_checked");
     let form_to_be_added = document.createElement("form");
-
-    console.log(`ID IS ${id}`);
 
     form_to_be_added.classList.add("list-element");
     form_to_be_added.innerHTML = `<form class="list-element">
@@ -150,10 +148,6 @@ function addTextChangeListener(theText) {
                 break;
             }
         }
-
-        console.log(`idOfText : ${idOfText}`);
-        console.log(cards);
-        console.log(indexOfText);
         cards[indexOfText].textContent = valueOfText;
         storeData();
     })
